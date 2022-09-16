@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 
 import App from './App';
 
+import { ResultContextProvider } from './contexts/ResultContextProvider';
+
 import './global.css';
 
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -10,9 +12,12 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Router>
-        <App />
-    </Router>
+  <ResultContextProvider>
+           <Router>
+               <App />
+          </Router>
+  </ResultContextProvider>
+    
 );
 
 
